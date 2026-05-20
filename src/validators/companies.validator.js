@@ -1,0 +1,10 @@
+const Joi = require('joi');
+
+const CompanyPayloadSchema = Joi.object({
+  name: Joi.string().required(),
+  location: Joi.string().required(),
+  description: Joi.string().allow('', null),
+  website: Joi.string().allow('', null),
+}).unknown(true);
+
+module.exports = { CompanyPayloadSchema };
